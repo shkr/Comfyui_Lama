@@ -32,7 +32,7 @@ def inpaint_img_with_lama(
     print(mask.shape)
     mask=mask*255
     batch['image'] = img.permute(0,3, 1, 2)
-    batch['mask'] = mask[None, None]
+    batch['mask'] = mask[None,]
     unpad_to_size = [batch['image'].shape[2], batch['image'].shape[3]]
     batch['image'] = pad_tensor_to_modulo(batch['image'], mod)
     batch['mask'] = pad_tensor_to_modulo(batch['mask'], mod)
